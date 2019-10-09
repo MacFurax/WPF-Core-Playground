@@ -5,36 +5,53 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Knob"
              mc:Ignorable="d" 
-             d:DesignHeight="50" d:DesignWidth="50">
-    <Grid x:Name="KnobGrid" MaxWidth="50" MaxHeight="50" MouseDown="KnobGrid_MouseDown" MouseUp="KnobGrid_MouseUp" MouseMove="KnobGrid_MouseMove">
-		<Canvas >
-			<Ellipse Height="50" Width="50">
-				<Ellipse.Fill>
-					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-						<GradientStop Color="#FF464646" Offset="1"/>
-						<GradientStop Color="White" Offset="0"/>
-					</LinearGradientBrush>
-				</Ellipse.Fill>
-				<Ellipse.Effect>
-					<DropShadowEffect BlurRadius="10" Direction="270" RenderingBias="Quality" ShadowDepth="5" Opacity="0.4" Color="Black"/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse Height="25" Width="25 " Canvas.Left="12" Canvas.Top="12">
-				<Ellipse.Fill>
-					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-						<GradientStop Color="#FF787878" Offset="1"/>
-						<GradientStop Color="White" Offset="0"/>
-					</LinearGradientBrush>
-				</Ellipse.Fill>
-				<Ellipse.Effect>
-					<DropShadowEffect BlurRadius="10" Direction="270" RenderingBias="Quality" ShadowDepth="15" Opacity="0.2"/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Line X1="25" Y1="15" X2="25" Y2="23" Stroke="GreenYellow" StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
-				<Line.RenderTransform>
-					<RotateTransform Angle="{Binding Angle}" CenterX="25" CenterY="25"/>
-				</Line.RenderTransform>
-			</Line>
-		</Canvas>
-	</Grid>
+             d:DesignHeight="100" d:DesignWidth="50">
+    <Grid x:Name="KnobGrid" MaxWidth="50" MaxHeight="100" MouseDown="KnobGrid_MouseDown" MouseUp="KnobGrid_MouseUp" MouseMove="KnobGrid_MouseMove">
+        
+        <Label x:Name="knobLabel" VerticalAlignment="Top" Content="LABEL" Foreground="White" HorizontalAlignment="Center" FontSize="10" Width="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="5" Direction="270" RenderingBias="Quality" ShadowDepth="4" Opacity="0.5"/>
+            </Label.Effect>
+        </Label>
+        
+        <Canvas Height="50" VerticalAlignment="Center">
+            <Ellipse Height="50" Width="50">
+                <Ellipse.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF464646" Offset="1"/>
+                        <GradientStop Color="White" Offset="0"/>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.Effect>
+                    <DropShadowEffect BlurRadius="10" Direction="270" RenderingBias="Quality" ShadowDepth="5" Opacity="0.4" Color="Black"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse Height="25" Width="25 " Canvas.Left="12" Canvas.Top="12">
+                <Ellipse.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF787878" Offset="1"/>
+                        <GradientStop Color="White" Offset="0"/>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.Effect>
+                    <DropShadowEffect BlurRadius="10" Direction="270" RenderingBias="Quality" ShadowDepth="15" Opacity="0.2"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Line X1="25" Y1="15" X2="25" Y2="23"  Stroke="#FF4F4F4F" StrokeThickness="3" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+                <Line.RenderTransform>
+                    <RotateTransform Angle="{Binding Angle}" CenterX="25" CenterY="25"/>
+                </Line.RenderTransform>
+            </Line>
+            <Line X1="25" Y1="15" X2="25" Y2="23" Stroke="GreenYellow" StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+                <Line.RenderTransform>
+                    <RotateTransform Angle="{Binding Angle}" CenterX="25" CenterY="25"/>
+                </Line.RenderTransform>
+            </Line>
+        </Canvas>
+        <Label x:Name="displayValue" VerticalAlignment="Bottom" Content="VALUE" Foreground="White" HorizontalAlignment="Center" FontSize="10" Margin="0,47,0,0" Width="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="5" Direction="270" RenderingBias="Quality" ShadowDepth="4" Opacity="0.5"/>
+            </Label.Effect>
+        </Label>
+    </Grid>
 </UserControl>

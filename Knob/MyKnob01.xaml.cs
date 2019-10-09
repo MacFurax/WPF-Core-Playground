@@ -23,6 +23,7 @@ namespace Knob
 		{
 			InitializeComponent();
 			DataContext = this;
+            setLabel(_label);
 			//Console.WriteLine("MyKnob01::MyKnob01");
 		}
 
@@ -32,6 +33,12 @@ namespace Knob
 
 		private const double minAngle = -145.0;
 		private const double maxAngle = 145.0;
+
+        private double _value = 0.0;
+        private double _minValue = -1.0;
+        private double _maxValue = 1.0;
+
+        private string _label = "to set";
 
 		public double Angle { 
 			get => _angle;
@@ -45,14 +52,36 @@ namespace Knob
 				
 			}
 		}
-		
 
-		public event PropertyChangedEventHandler PropertyChanged;
+        public double Value { get => _value; set => this._value = value; }
 
-		public void setRange(double min, double max)
-		{ 
+        public event PropertyChangedEventHandler PropertyChanged;
+		public void setRange(double value, double min, double max)
+		{
+            _value = value;
+            _minValue = min;
+            _maxValue = max;
 
+            if (_value < _minValue)
+                _value = _minValue;
+            else if (_value > _maxValue)
+                _value = _maxValue;
+
+            Angle = interpolate(_value, _minValue, _maxValue, minAngle, maxAngle);
+
+            displayValue.Content = _value.ToString();
 		}
+
+        public void setLabel(string label)
+        {
+            _label = label;
+            knobLabel.Content = _label;
+        }
+
+        private double interpolate(double sourceValue, double sourceMin, double sourceMax, double targetMin, double targetMax)
+        {
+            return targetMin + (targetMax-targetMin) * ((sourceValue - sourceMin) /(sourceMax- sourceMin));
+        }
 
 		protected void OnPropertyChanged(string name)
 		{
@@ -93,7 +122,10 @@ namespace Knob
 				}
 				Angle = newAngle;
 
-				startDial = e.GetPosition(this);
+                _value = interpolate(newAngle, minAngle, maxAngle, _minValue, _maxValue);
+                displayValue.Content = _value.ToString("0.##");
+
+                startDial = e.GetPosition(this);
 			}
 		}
 	}

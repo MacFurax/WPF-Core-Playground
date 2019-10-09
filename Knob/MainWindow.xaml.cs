@@ -23,6 +23,10 @@ namespace Knob
         public MainWindow()
         {
             InitializeComponent();
+            knob01.setRange(0.0, -1.0, 1.0);
+            knob01.setLabel("detune");
+            knob02.setRange(0.0, 0.0, 180.0);
+            knob02.setLabel("filter.cutoff");
         }
     }
 }
