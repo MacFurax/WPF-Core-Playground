@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29403.142
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knob", "Knob\Knob.csproj", "{B71A4489-1F0B-48C6-99DA-91F886C53B5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Knob", "Knob\Knob.csproj", "{B71A4489-1F0B-48C6-99DA-91F886C53B5F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_Sandbox", "WPF_Sandbox\WPF_Sandbox.csproj", "{1EFB22DF-03BD-496F-97BC-DEFACA51C28B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBinding", "DataBinding\DataBinding.csproj", "{AA5B92C7-78A8-46A9-9B10-92BAD890AF02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{B71A4489-1F0B-48C6-99DA-91F886C53B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B71A4489-1F0B-48C6-99DA-91F886C53B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B71A4489-1F0B-48C6-99DA-91F886C53B5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EFB22DF-03BD-496F-97BC-DEFACA51C28B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EFB22DF-03BD-496F-97BC-DEFACA51C28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EFB22DF-03BD-496F-97BC-DEFACA51C28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EFB22DF-03BD-496F-97BC-DEFACA51C28B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA5B92C7-78A8-46A9-9B10-92BAD890AF02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA5B92C7-78A8-46A9-9B10-92BAD890AF02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA5B92C7-78A8-46A9-9B10-92BAD890AF02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA5B92C7-78A8-46A9-9B10-92BAD890AF02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

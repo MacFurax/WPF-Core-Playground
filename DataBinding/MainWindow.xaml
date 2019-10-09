@@ -1,0 +1,69 @@
+﻿<Window x:Class="DataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBinding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="319" Width="313"
+		Background="#FF2C3230">
+	
+	<Window.Resources>
+		
+		<DataTemplate x:Key="myTaskTemplate">
+			<Border BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Stretch" Padding="4,4,4,4" >
+			<StackPanel>
+				<TextBlock Text="{Binding Path=Id}" />
+				<TextBlock Text="{Binding Path=Path}"/>
+				<TextBlock Text="{Binding Path=Value}"/>
+			</StackPanel>
+			</Border>
+		</DataTemplate>
+		
+		<Style TargetType="ListBoxItem">
+			<Setter Property="Opacity" Value="0.5" />
+			<Style.Triggers>
+				<Trigger Property="IsSelected" Value="True">
+					<Trigger.Setters>
+						<Setter Property="Opacity" Value="1.0" />
+					</Trigger.Setters>
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+		
+	</Window.Resources>
+	
+	<Grid>
+		
+		<Grid.Resources>
+			<local:MyData x:Key="_data"/>
+		</Grid.Resources>
+		<Grid.DataContext>
+			<Binding Source="{StaticResource _data}"/>
+		</Grid.DataContext>
+		
+		<Grid.RowDefinitions>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+		</Grid.RowDefinitions>
+		
+		<Button Grid.Row="0" Background="{Binding Path=ColorName}" Width="150" Height="60">
+			I'm bound to be RED!
+		</Button>
+
+		<ListBox Grid.Row="1" 
+				 ItemsSource="{Binding Path=MyCollection}"
+				 ItemTemplate="{StaticResource myTaskTemplate}" HorizontalContentAlignment="Stretch">
+			<!--ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Text="{Binding Path=Id}" /> 
+						<TextBlock Text="{Binding Path=Path}"/>
+						<TextBlock Text="{Binding Path=Value}"/>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate-->
+		</ListBox>
+		
+	</Grid>
+</Window>
