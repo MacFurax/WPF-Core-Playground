@@ -14,8 +14,12 @@
 			</LinearGradientBrush>
 		</Grid.Background>
 
-		<local:MyKnob01 x:Name="knob01" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="50" Margin="63,63,0,0"/>
-		<local:MyKnob01 x:Name="knob02" HorizontalAlignment="Left" Height="100" Margin="131,63,0,0" VerticalAlignment="Top" Width="50"/>
+		<local:MyKnob01 x:Name="knob01" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="50" Margin="66,152,0,0"/>
+		<local:MyKnob01 x:Name="knob02" HorizontalAlignment="Left" Height="100" Margin="134,152,0,0" VerticalAlignment="Top" Width="50"/>
+		<local:VFader HorizontalAlignment="Left" Height="200" Margin="224,42,0,0" VerticalAlignment="Top" Width="18"/>
+		<local:VFader HorizontalAlignment="Left" Height="200" Margin="259,42,0,0" VerticalAlignment="Top" Width="18"/>
+		<local:VFader HorizontalAlignment="Left" Height="200" Margin="294,42,0,0" VerticalAlignment="Top" Width="18"/>
+		<local:VFader HorizontalAlignment="Left" Height="200" Margin="329,42,0,0" VerticalAlignment="Top" Width="18"/>
 
 	</Grid>
 </Window>
