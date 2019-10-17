@@ -37,6 +37,7 @@ namespace Knob
         private double _value = 0.0;
         private double _minValue = -1.0;
         private double _maxValue = 1.0;
+		private string _valueStr = "";
 
         private string _label = "to set";
 
@@ -53,7 +54,35 @@ namespace Knob
 			}
 		}
 
-        public double Value { get => _value; set => this._value = value; }
+		public string Label
+		{
+			get => _label;
+			set
+			{
+				if (_label != value)
+				{
+					_label = value;
+					OnPropertyChanged("Label");
+				}
+			}
+		}
+
+		public string ValueStr
+		{
+			get => _valueStr;
+			set
+			{
+				if (_valueStr != value)
+				{
+					_valueStr = value;
+					OnPropertyChanged("ValueStr");
+				}
+			}
+		}
+
+
+
+		public double Value { get => _value; set => this._value = value; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 		public void setRange(double value, double min, double max)
@@ -69,14 +98,16 @@ namespace Knob
 
             Angle = interpolate(_value, _minValue, _maxValue, minAngle, maxAngle);
 
-            displayValue.Content = _value.ToString();
+            //displayValue.Content = _value.ToString();
+			ValueStr = _value.ToString("0.##");
 		}
 
         public void setLabel(string label)
         {
-            _label = label;
-            knobLabel.Content = _label;
-        }
+            //_label = label;
+            //knobLabel.Content = _label;
+			Label = label;
+		}
 
         private double interpolate(double sourceValue, double sourceMin, double sourceMax, double targetMin, double targetMax)
         {
@@ -123,9 +154,10 @@ namespace Knob
 				Angle = newAngle;
 
                 _value = interpolate(newAngle, minAngle, maxAngle, _minValue, _maxValue);
-                displayValue.Content = _value.ToString("0.##");
+                //displayValue.Content = _value.ToString("0.##");
+				ValueStr = _value.ToString("0.##");
 
-                startDial = e.GetPosition(this);
+				startDial = e.GetPosition(this);
 			}
 		}
 	}

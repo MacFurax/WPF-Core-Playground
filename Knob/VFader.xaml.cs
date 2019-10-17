@@ -40,7 +40,7 @@ namespace Knob
 
 		private void PushButton_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
-			Console.WriteLine("PushButton_MouseDown");
+			//Console.WriteLine("PushButton_MouseDown");
 			Mouse.Capture(sender as IInputElement);
 			_movingStartY = e.GetPosition(this).Y;
 			_moving = true;
@@ -53,11 +53,11 @@ namespace Knob
 				//Console.WriteLine("PushButton_MouseMove");
 				double newY = e.GetPosition(this).Y;
 				double delta = newY - _movingStartY;
-				Console.WriteLine("PushButton_MouseMove - Delta " + delta);
+				//Console.WriteLine("PushButton_MouseMove - Delta " + delta);
 				FaderPos += delta;
 				if (FaderPos > 0.0) FaderPos = 0.0;
-				if(FaderPos < -200.0) FaderPos = -200.0;
-				Console.WriteLine("PushButton_MouseMove - FaderPos " + FaderPos);
+				if(FaderPos < -195.0) FaderPos = -195.0;
+				//Console.WriteLine("PushButton_MouseMove - FaderPos " + FaderPos);
 				OnPropertyChanged(null);
 				_movingStartY = newY;
 			}
@@ -65,7 +65,7 @@ namespace Knob
 
 		private void PushButton_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
-			Console.WriteLine("PushButton_MouseUp");
+			//Console.WriteLine("PushButton_MouseUp");
 			if (_moving)
 			{
 				_moving = false;

@@ -14,12 +14,14 @@
 			</LinearGradientBrush>
 		</Grid.Background>
 
-		<local:MyKnob01 x:Name="knob01" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="50" Margin="66,152,0,0"/>
-		<local:MyKnob01 x:Name="knob02" HorizontalAlignment="Left" Height="100" Margin="134,152,0,0" VerticalAlignment="Top" Width="50"/>
-		<local:VFader HorizontalAlignment="Left" Height="200" Margin="224,42,0,0" VerticalAlignment="Top" Width="18"/>
-		<local:VFader HorizontalAlignment="Left" Height="200" Margin="259,42,0,0" VerticalAlignment="Top" Width="18"/>
-		<local:VFader HorizontalAlignment="Left" Height="200" Margin="294,42,0,0" VerticalAlignment="Top" Width="18"/>
-		<local:VFader HorizontalAlignment="Left" Height="200" Margin="329,42,0,0" VerticalAlignment="Top" Width="18"/>
+		<local:MyKnob01 x:Name="knob01" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="50" Margin="44,33,0,0"/>
+		<local:MyKnob01 x:Name="knob02" HorizontalAlignment="Left" Height="100" Margin="112,33,0,0" VerticalAlignment="Top" Width="50"/>
+		<local:VFader x:Name="fader01" HorizontalAlignment="Left" Height="200" Margin="179,33,0,0" VerticalAlignment="Top" Width="18"/>
+		<local:VFader x:Name="fader02" HorizontalAlignment="Left" Height="200" Margin="239,33,0,0" VerticalAlignment="Top" Width="18"/>
+		<local:VFader x:Name="fader03" HorizontalAlignment="Left" Height="200" Margin="299,33,0,0" VerticalAlignment="Top" Width="18"/>
+		<local:VFader x:Name="fader04" HorizontalAlignment="Left" Height="200" Margin="359,33,0,0" VerticalAlignment="Top" Width="18"/>
+		<local:MyKnob01 x:Name="knob03" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="50" Margin="44,138,0,0"/>
+		<local:MyKnob01 x:Name="knob04" HorizontalAlignment="Left" Height="100" Margin="112,138,0,0" VerticalAlignment="Top" Width="50"/>
 
 	</Grid>
 </Window>

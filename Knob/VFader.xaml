@@ -5,27 +5,40 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Knob"
              mc:Ignorable="d" 
-             d:DesignHeight="220" d:DesignWidth="30"
-			 Height="220"  MinHeight="220" MaxHeight="220" 
-			 Width="30" MinWidth="30" MaxWidth="30">
-	<Grid>
-		<Rectangle HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Fill="#FF303030" RadiusX="3" RadiusY="3"/>
-		<Grid Width="26" Height="26" VerticalAlignment="Bottom" MouseDown="PushButton_MouseDown" MouseUp="PushButton_MouseUp" MouseMove="PushButton_MouseMove">
-			<Grid.RenderTransform>
-				<TranslateTransform Y="{Binding FaderPos}"/>
-			</Grid.RenderTransform>
-			<Ellipse x:Name="PushButton" Width="26" Height="26" > 
-				<Ellipse.Fill>
-					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-						<GradientStop Color="#FF555555" Offset="1"/>
-						<GradientStop Color="White" Offset="0"/>
-					</LinearGradientBrush>
-				</Ellipse.Fill>
-				<Ellipse.Effect>
-					<DropShadowEffect BlurRadius="5" ShadowDepth="2" Direction="270" Opacity="0.5"/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse Width="10" Height="10" Fill="YellowGreen" Stroke="#FF4F4F4F" StrokeThickness="1"/>
-		</Grid>
-	</Grid>
+             d:DesignHeight="260" d:DesignWidth="30"
+			 Height="260"  MinHeight="260" MaxHeight="260" 
+			 Width="60" MinWidth="60" MaxWidth="60">
+
+    <Grid Height="260"  MinHeight="260" MaxHeight="260" 
+			 Width="60" MinWidth="60" MaxWidth="60">
+		
+        <Grid Height="220" VerticalAlignment="Top">
+			
+            <Rectangle HorizontalAlignment="Left" Height="200" Margin="25,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Fill="#FF303030" RadiusX="3" RadiusY="3"/>
+			
+            <Grid Width="26" Height="26" VerticalAlignment="Bottom" MouseDown="PushButton_MouseDown" MouseUp="PushButton_MouseUp" MouseMove="PushButton_MouseMove">
+                <Grid.RenderTransform>
+                    <TranslateTransform Y="{Binding FaderPos}"/>
+                </Grid.RenderTransform>
+                <Ellipse x:Name="PushButton" Width="26" Height="26" >
+                    <Ellipse.Fill>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF555555" Offset="1"/>
+                            <GradientStop Color="White" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                    <Ellipse.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="2" Direction="270" Opacity="0.7"/>
+                    </Ellipse.Effect>
+                </Ellipse>
+				<Ellipse Width="10" Height="10" Fill="YellowGreen" StrokeThickness="1">
+					<Ellipse.Effect>
+						<DropShadowEffect BlurRadius="10" ShadowDepth="2" Direction="270" Opacity="0.5" Color="YellowGreen"/>
+					</Ellipse.Effect>
+				</Ellipse>
+				<Ellipse Width="10" Height="10" Fill="YellowGreen" Stroke="#FF4F4F4F" StrokeThickness="1"/>
+            </Grid>
+        </Grid>
+        <Label Content="LABEL" VerticalAlignment="Bottom" Foreground="White" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="23" Width="60" FontSize="12"/>
+    </Grid>
 </UserControl>
