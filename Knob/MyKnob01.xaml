@@ -9,7 +9,7 @@
 			 >
     <Grid x:Name="KnobGrid" MaxWidth="50" MaxHeight="100" MouseDown="KnobGrid_MouseDown" MouseUp="KnobGrid_MouseUp" MouseMove="KnobGrid_MouseMove">
 
-		<Label x:Name="knobLabel" VerticalAlignment="Top" Content="{Binding Label}" Foreground="White" HorizontalAlignment="Center" FontSize="12" Width="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Top">
+		<Label x:Name="knobLabel" VerticalAlignment="Top" Content="{Binding Label}" Foreground="White" HorizontalAlignment="Center" FontSize="10" Width="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Top">
             <!--Label.Effect>
                 <DropShadowEffect BlurRadius="5" Direction="270" RenderingBias="Quality" ShadowDepth="4" Opacity="0.5"/>
             </Label.Effect-->
@@ -57,7 +57,7 @@
 				</Line.Effect>
             </Line>
         </Canvas>
-		<Label x:Name="displayValue" VerticalAlignment="Bottom" Content="{Binding ValueStr}" Foreground="White" HorizontalAlignment="Center" FontSize="12" Margin="0,47,0,0" Width="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Height="23">
+		<Label x:Name="displayValue" VerticalAlignment="Bottom" Content="{Binding ValueStr}" Foreground="White" HorizontalAlignment="Center" FontSize="10" Margin="0,47,0,0" Width="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Height="23">
             <!--Label.Effect>
                 <DropShadowEffect BlurRadius="5" Direction="270" RenderingBias="Quality" ShadowDepth="4" Opacity="0.5"/>
             </Label.Effect-->
