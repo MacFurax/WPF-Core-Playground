@@ -1,20 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
+﻿
 namespace Knob
 {
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -25,16 +13,25 @@ namespace Knob
             InitializeComponent();
 
             knob01.setRange(0.75, 0.0, 1.0);
-            knob01.setLabel("LEVEL");
+            knob01.setLabel("level");
 
             knob02.setRange(0.0, -1.0, 1.0);
-            knob02.setLabel("DETUNE");
+            knob02.setLabel("detune");
 
 			knob03.setRange(180.0, 0.0, 180.0);
-			knob03.setLabel("CUTOFF");
+			knob03.setLabel("cutoff");
 
 			knob04.setRange(0.0, 0.0, 1.0);
-			knob04.setLabel("RESO");
-		}
+			knob04.setLabel("reso");
+
+            fader01.Label = "A";
+            fader01.setRange(10.0, 0.001, 3000.0);
+            fader02.Label = "D";
+            fader02.setRange(400.0, 0.001, 3000.0);
+            fader03.Label = "S";
+            fader03.setRange(0.85, 0.0, 1.0);
+            fader04.Label = "R";
+            fader04.setRange(500.0, 0.001, 3000.0);
+        }
     }
 }

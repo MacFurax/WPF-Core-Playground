@@ -39,6 +39,6 @@
 				<Ellipse Width="10" Height="10" Fill="YellowGreen" Stroke="#FF4F4F4F" StrokeThickness="1"/>
             </Grid>
         </Grid>
-        <Label Content="LABEL" VerticalAlignment="Bottom" Foreground="White" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="23" Width="60" FontSize="12"/>
+        <Label x:Name="faderLabel" Content="{Binding Label}" VerticalAlignment="Bottom" Foreground="White" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="23" Width="60" FontSize="12"/>
     </Grid>
 </UserControl>

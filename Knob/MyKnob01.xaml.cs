@@ -104,8 +104,6 @@ namespace Knob
 
         public void setLabel(string label)
         {
-            //_label = label;
-            //knobLabel.Content = _label;
 			Label = label;
 		}
 

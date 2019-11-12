@@ -12,6 +12,8 @@ namespace Knob
     /// </summary>
     public partial class VFader : UserControl, INotifyPropertyChanged
 	{
+        private string _label = "to set";
+        private double _value, _min, _max;
 		private class DataContexValues
 		{
 			
@@ -27,11 +29,33 @@ namespace Knob
 		}
 
 		DataContexValues dataContextValues = new DataContexValues();
+
 		private bool _moving = false;
 		private double _movingStartY = 0.0;
 		public double FaderPos { get; set; }
+        public string Label { 
+            get => _label;
+            set {
+                if (value != _label)
+                {
+                    _label = value;
+                    OnPropertyChanged("faderLabel");
+                }
+            } 
+        }
 
-		public event PropertyChangedEventHandler PropertyChanged;
+        public double Value { get => _value; set => _value = value; }
+
+        public void setRange( double value, double min, double max)
+        {
+            _value = value;
+            _min = min;
+            _max = max;
+
+            FaderPos = interpolate(_value, _min, _max, 0.0, -195.0);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
 		protected void OnPropertyChanged(string name)
 		{
@@ -54,10 +78,15 @@ namespace Knob
 				double newY = e.GetPosition(this).Y;
 				double delta = newY - _movingStartY;
 				//Console.WriteLine("PushButton_MouseMove - Delta " + delta);
-				FaderPos += delta;
+				
+                FaderPos += delta;
 				if (FaderPos > 0.0) FaderPos = 0.0;
 				if(FaderPos < -195.0) FaderPos = -195.0;
+
+                _value = interpolate(FaderPos, 0.0,-195.0, _min, _max);
 				//Console.WriteLine("PushButton_MouseMove - FaderPos " + FaderPos);
+				//Console.WriteLine("PushButton_MouseMove - _value " + _value);
+
 				OnPropertyChanged(null);
 				_movingStartY = newY;
 			}
@@ -73,6 +102,10 @@ namespace Knob
 			}
 		}
 
-		
-	}
+        private double interpolate(double sourceValue, double sourceMin, double sourceMax, double targetMin, double targetMax)
+        {
+            return targetMin + (targetMax - targetMin) * ((sourceValue - sourceMin) / (sourceMax - sourceMin));
+        }
+
+    }
 }

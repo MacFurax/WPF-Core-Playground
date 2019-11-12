@@ -6,22 +6,30 @@
         xmlns:local="clr-namespace:Knob"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-	<Grid>
-		<Grid.Background>
-			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-				<GradientStop Color="#FF474747" Offset="0"/>
-				<GradientStop Color="#FF252525" Offset="1"/>
-			</LinearGradientBrush>
-		</Grid.Background>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF474747" Offset="0"/>
+                <GradientStop Color="#FF252525" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <local:MyKnob01 x:Name="knob01" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="50" Margin="44,33,0,0"/>
+        <local:MyKnob01 x:Name="knob02" HorizontalAlignment="Left" Height="100" Margin="112,33,0,0" VerticalAlignment="Top" Width="50"/>
+        <local:MyKnob01 x:Name="knob03" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="50" Margin="44,138,0,0"/>
+        <local:MyKnob01 x:Name="knob04" HorizontalAlignment="Left" Height="100" Margin="112,138,0,0" VerticalAlignment="Top" Width="50"/>
+        
+        <StackPanel Orientation="Vertical" Margin="196,10,355,99">
+            <Label Content="Amp Env" Foreground="White" FontWeight="Bold" FontSize="16" ></Label>
+            <StackPanel Orientation="Horizontal">
+                <local:VFader x:Name="fader01" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="18"/>
+                <local:VFader x:Name="fader02" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="18"/>
+                <local:VFader x:Name="fader03" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="18"/>
+                <local:VFader x:Name="fader04" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="18"/>
+            </StackPanel>
+        </StackPanel>
+        
+        
 
-		<local:MyKnob01 x:Name="knob01" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="50" Margin="44,33,0,0"/>
-		<local:MyKnob01 x:Name="knob02" HorizontalAlignment="Left" Height="100" Margin="112,33,0,0" VerticalAlignment="Top" Width="50"/>
-		<local:VFader x:Name="fader01" HorizontalAlignment="Left" Height="200" Margin="179,33,0,0" VerticalAlignment="Top" Width="18"/>
-		<local:VFader x:Name="fader02" HorizontalAlignment="Left" Height="200" Margin="239,33,0,0" VerticalAlignment="Top" Width="18"/>
-		<local:VFader x:Name="fader03" HorizontalAlignment="Left" Height="200" Margin="299,33,0,0" VerticalAlignment="Top" Width="18"/>
-		<local:VFader x:Name="fader04" HorizontalAlignment="Left" Height="200" Margin="359,33,0,0" VerticalAlignment="Top" Width="18"/>
-		<local:MyKnob01 x:Name="knob03" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="50" Margin="44,138,0,0"/>
-		<local:MyKnob01 x:Name="knob04" HorizontalAlignment="Left" Height="100" Margin="112,138,0,0" VerticalAlignment="Top" Width="50"/>
-
-	</Grid>
+    </Grid>
 </Window>
